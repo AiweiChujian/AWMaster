@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'AWMaster_Example' do
+  pod 'AWMaster', :path => '../'
+
+  target 'AWMaster_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  end
+end
