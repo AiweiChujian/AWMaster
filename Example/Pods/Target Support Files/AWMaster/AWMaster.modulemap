@@ -1,0 +1,6 @@
+framework module AWMaster {
+  umbrella header "AWMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}

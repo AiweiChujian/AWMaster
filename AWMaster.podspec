@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/oovsxx@163.com/AWMaster'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'oovsxx@163.com' => 'aiweichujian@gmail.com' }
+  s.author           = { 'aiweichujian' => 'aiweichujian@gmail.com' }
   s.source           = { :git => 'https://github.com/oovsxx@163.com/AWMaster.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

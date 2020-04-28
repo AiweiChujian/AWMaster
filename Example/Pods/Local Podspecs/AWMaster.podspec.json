@@ -1,0 +1,22 @@
+{
+  "name": "AWMaster",
+  "version": "0.1.0",
+  "summary": "A short description of AWMaster.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/oovsxx@163.com/AWMaster",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "oovsxx@163.com": "aiweichujian@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/oovsxx@163.com/AWMaster.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AWMaster/Classes/**/*"
+}
