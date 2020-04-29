@@ -203,6 +203,9 @@ AWCompleteSingleton(master)
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
+    if ([self respondsToSelector:aSelector]) {
+        return [super methodSignatureForSelector:aSelector];
+    }
     return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_CTYPES];
 }
 - (void)forwardInvocation:(NSInvocation *)anInvocation
@@ -211,6 +214,9 @@ AWCompleteSingleton(master)
 }
 + (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
+    if ([self respondsToSelector:aSelector]) {
+        return [super methodSignatureForSelector:aSelector];
+    }
     return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_CTYPES];
 }
 + (void)forwardInvocation:(NSInvocation *)anInvocation

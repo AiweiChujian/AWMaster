@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## AWMaster
 
-Copyright (c) 2020 oovsxx@163.com <aiweichujian@gmail.com>
+Copyright (c) 2020 hellohezhili@gmail.com <hellohezhili@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

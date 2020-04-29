@@ -9,7 +9,7 @@
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
 
-#define AW_AnnounceCurrentMethod(...) [AWMaster announceInstanceMethod:(object_isClass(self)?NO:YES) selector:_cmd,__VA_ARGS__];
+#define AW_AnnounceCurrentMethod(...) [object_isClass(self)?self:self.class announceInstanceMethod:(object_isClass(self)?NO:YES) selector:_cmd,__VA_ARGS__];
 
 NS_ASSUME_NONNULL_BEGIN
 

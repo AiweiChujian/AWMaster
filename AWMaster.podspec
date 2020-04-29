@@ -8,35 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AWMaster'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of AWMaster.'
+  s.version          = '0.9.0'
+  s.summary          = '组件化架构中间件，基于消息转发的组件间通信方案'
+                       
+  s.homepage         = 'https://github.com/AiweiChujian/AWMaster'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/oovsxx@163.com/AWMaster'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'aiweichujian' => 'aiweichujian@gmail.com' }
-  s.source           = { :git => 'https://github.com/oovsxx@163.com/AWMaster.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'aiweichujian' => 'hellohezhili@gmail.com' }
+  s.source           = { :git => 'https://github.com/AiweiChujian/AWMaster.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'AWMaster/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AWMaster' => ['AWMaster/Assets/*.png']
-  # }
+  s.frameworks = 'UIKit'
+  s.requires_arc = true
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

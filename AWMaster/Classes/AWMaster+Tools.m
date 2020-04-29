@@ -169,6 +169,7 @@
             AW_GET_STRUCT_CASE(CGAffineTransform, valueWithCGAffineTransform)
             AW_GET_STRUCT_CASE(UIEdgeInsets, valueWithUIEdgeInsets)
             AW_GET_STRUCT_CASE(UIOffset, valueWithUIOffset)
+            
         }
     
 #define AW_GET_RETURN_CASE(_type) \
