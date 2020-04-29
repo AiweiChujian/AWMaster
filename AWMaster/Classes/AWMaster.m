@@ -12,6 +12,8 @@
 static NSMutableDictionary <NSString *, Class> *_instanceMethodDictonary;
 static NSMutableDictionary <NSString *, Class> *_classMethodDictonary;
 static NSMutableArray <Class> *_receiverArray;
+static NSMutableArray <NSString *> *_selfInstanceSelectorList;
+static NSMutableArray <NSString *> *_selfClassSelectorList;
 
 #define AW_GENERAL_CTYPES "v@:@"
 
@@ -47,6 +49,7 @@ AWCompleteSingleton(master)
         _classMethodDictonary = [[NSMutableDictionary alloc]init];
     }
     
+    // (to do: 将以下调用异步派发给一个串行队列, ps:如果这样做,记得消息转发取值时也需要在同一个队列)
     // 注册实例方法
     [self p_registerProtocol:protocol requiredMethod:YES instanceMethod:YES withClass:slave];
     [self p_registerProtocol:protocol requiredMethod:NO instanceMethod:YES withClass:slave];
@@ -120,7 +123,13 @@ AWCompleteSingleton(master)
 
 + (void)p_registerProtocol:(Protocol *)protocol requiredMethod:(BOOL)isRequiredMethod instanceMethod:(BOOL)isInstanceMethod withClass:(Class)cls
 {
-#warning to do 验证方法名是否和Master的方法同名
+    if (_selfClassSelectorList == nil) {
+        _selfClassSelectorList = [self p_getSelectorListForClass:object_getClass(self)];
+    }
+    
+    if (_selfInstanceSelectorList == nil) {
+        _selfInstanceSelectorList = [self p_getSelectorListForClass:self];
+    }
     
     NSMutableDictionary *targetDictionary = isInstanceMethod?_instanceMethodDictonary:_classMethodDictonary;
     unsigned int methodCount = 0;
@@ -131,6 +140,13 @@ AWCompleteSingleton(master)
             struct objc_method_description methodDes = methodList[i];
             NSString *key = NSStringFromSelector(methodDes.name);
             if (cls) { // cls为nil时即注销服务协议
+                if ((isInstanceMethod && [_selfInstanceSelectorList containsObject:key])||(!isInstanceMethod && [_selfClassSelectorList containsObject:key])) {
+                    
+                    // slave中注册的方法,master中已实现
+                    [self masterImplementedSelecotr:methodDes.name fromSlave:cls isInstanceMethod:isInstanceMethod];
+                    continue;
+                }
+                
                 Class previousClass = targetDictionary[key];
                 if (previousClass && ![self reregisterSeletor:methodDes.name forSlave:cls previousSlave:previousClass]) {
                     continue;
@@ -142,6 +158,20 @@ AWCompleteSingleton(master)
     }
 }
 
++ (NSMutableArray *)p_getSelectorListForClass:(Class)cls
+{
+    NSMutableArray *selectorList = [[NSMutableArray alloc]init];
+    unsigned int methodCount = 0;
+    Method *methodList = class_copyMethodList(cls, &methodCount);
+    if (methodList) {
+        for (unsigned int i = 0; i < methodCount; i++) {
+            Method method = methodList[i];
+            [selectorList addObject:NSStringFromSelector(method_getName(method))];
+        }
+        free(methodList);
+    }
+    return selectorList;
+}
 
 #pragma mark forward selector
 
@@ -191,8 +221,13 @@ AWCompleteSingleton(master)
 
 + (BOOL)reregisterSeletor:(SEL)selector forSlave:(Class)slave previousSlave:(Class)previousSlave
 {
-    NSLog(@"⚠️ reregister seletor (%@), for class (%@), previous class (%@)",NSStringFromSelector(selector),NSStringFromClass(slave),NSStringFromClass(previousSlave));
+    NSLog(@"⚠️ reregister seletor (%@), for slave (%@), previous slave (%@)",NSStringFromSelector(selector),NSStringFromClass(slave),NSStringFromClass(previousSlave));
     return YES;
+}
+
++ (void)masterImplementedSelecotr:(SEL)selector fromSlave:(Class)slave isInstanceMethod:(BOOL)isInstanceMethod
+{
+    NSLog(@"⚠️ master implemented selecotr (%@), from salve (%@)",NSStringFromSelector(selector),NSStringFromClass(slave));
 }
 
 + (void)unregisteredSelector:(SEL)selector isInstanceMethod:(BOOL)isInstanceMethod

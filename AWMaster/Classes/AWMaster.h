@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)reregisterSeletor:(SEL)selector forSlave:(Class)slave previousSlave:(Class)previousSlave;
 
 /// 注册master中已经实现的方法(不允许的行为)
-+ (void)masterImplementedSelecotr:(SEL)selector fromSlave:(Class)slave;
++ (void)masterImplementedSelecotr:(SEL)selector fromSlave:(Class)slave isInstanceMethod:(BOOL)isInstanceMethod;
 
 /// 未注册的类/实例方法被调用
 + (void)unregisteredSelector:(SEL)selector isInstanceMethod:(BOOL)isInstanceMethod;
