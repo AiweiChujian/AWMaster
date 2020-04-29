@@ -1,5 +1,5 @@
 PODS:
-  - AWMaster (0.1.0)
+  - AWMaster (0.9.0)
   - Kiwi (3.0.0)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AWMaster: 687fa98fdda624c27ee1b71e8fd93b7730d98908
+  AWMaster: 00915b50542c0d6992375ca66a9efc8c019e39b8
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
 
 PODFILE CHECKSUM: d864a7c575da5b1051f8cc0228aa03e9b8f9c159
