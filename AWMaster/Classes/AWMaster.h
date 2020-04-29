@@ -69,9 +69,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// Announcement接受者数组
 @property (class, nonatomic, readonly)NSArray <Class> *receiverArray;
 
-/// 单例,用于调用实例方法
-+ (instancetype)master;
-
 /// 注册服务
 /// 注册服务时会将slave添加到receiverArray中(接收Announcement)
 /// @param slave 服务提供者,需要创建为完全单例

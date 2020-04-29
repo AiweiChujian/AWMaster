@@ -14,6 +14,8 @@
 
 + (UIImage *)moudleA_imageWithImageName:(NSString *)imageName;
 
+- (UIImage *)moudleA_imageWithDomain:(NSString *)domain andSerial:(NSInteger)serial;
+
 @end
 
 

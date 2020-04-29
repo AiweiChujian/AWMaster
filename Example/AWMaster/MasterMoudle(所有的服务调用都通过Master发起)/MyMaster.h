@@ -7,14 +7,18 @@
 //
 
 #import <AWMaster/AWMaster.h>
+#import "AWMaster+Tools.h"
 #import "MoudleAProtocol.h"
+#import "MoudleBProtocol.h"
+#import "MyAnnouncement.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyMaster : AWMaster
 <
+    MyAnnouncement,
     MoudleAProtocol,
-    ABCAnnouncement
+    MoudleBProtocol
 >
 @end
 

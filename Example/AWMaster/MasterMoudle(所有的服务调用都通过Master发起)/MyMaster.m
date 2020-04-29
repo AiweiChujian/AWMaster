@@ -7,11 +7,19 @@
 //
 
 #import "MyMaster.h"
-#import "AWMaster+Tools.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wprotocol"
 @implementation MyMaster
 
+AWCompleteSingleton(myMaster)
+
++(id)replyForAsk:(NSString *)askString
+{
+    return AW_AnnounceCurrentMethod(askString);
+}
+
+
 @end
+
 #pragma clang diagnostic pop

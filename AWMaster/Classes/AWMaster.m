@@ -15,11 +15,9 @@ static NSMutableArray <Class> *_receiverArray;
 static NSMutableArray <NSString *> *_selfInstanceSelectorList;
 static NSMutableArray <NSString *> *_selfClassSelectorList;
 
-#define AW_GENERAL_CTYPES "v@:@"
+#define AW_GENERAL_TYPES "v@:@"
 
 @implementation AWMaster
-
-AWCompleteSingleton(master)
 
 +(NSDictionary<NSString *,Class> *)instanceMethodDictionary
 {
@@ -91,11 +89,13 @@ AWCompleteSingleton(master)
 {
     BOOL isInstanceMethod = NO;
     if ([self isSafeUrlPath:urlPath andIsInstanceMethod:&isInstanceMethod]) {
+
+        urlPath = [urlPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         
-        NSCharacterSet *trimmingSet = [NSCharacterSet characterSetWithCharactersInString:@"/"];
         NSURL *url = [NSURL URLWithString:urlPath];
+        NSCharacterSet *trimmingSet = [NSCharacterSet characterSetWithCharactersInString:@"/"];
         NSString *selectorName = [url.path stringByTrimmingCharactersInSet:trimmingSet];
-        NSString *paramString = [url.query stringByTrimmingCharactersInSet:trimmingSet];
+        NSString *paramString = [[url.query stringByRemovingPercentEncoding] stringByTrimmingCharactersInSet:trimmingSet];
         
         id object = paramString; // 参数是字符串
         if ([paramString containsString:@"&"]) {
@@ -206,7 +206,7 @@ AWCompleteSingleton(master)
     if ([self respondsToSelector:aSelector]) {
         return [super methodSignatureForSelector:aSelector];
     }
-    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_CTYPES];
+    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_TYPES];
 }
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
@@ -217,7 +217,7 @@ AWCompleteSingleton(master)
     if ([self respondsToSelector:aSelector]) {
         return [super methodSignatureForSelector:aSelector];
     }
-    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_CTYPES];
+    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_TYPES];
 }
 + (void)forwardInvocation:(NSInvocation *)anInvocation
 {
@@ -243,10 +243,33 @@ AWCompleteSingleton(master)
 
 + (BOOL)isSafeUrlPath:(NSString *)urlPath andIsInstanceMethod:(BOOL *)isInstanceMethod
 {
-    NSURL *url = [NSURL URLWithString:urlPath];
-    *isInstanceMethod = ([[url.scheme lowercaseString] isEqualToString:@"class"])?NO:YES;
+    urlPath = [urlPath stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    return urlPath.length?YES:NO;
+    NSURL *url = [NSURL URLWithString:urlPath];
+    *isInstanceMethod = ([[url.host lowercaseString] isEqualToString:@"class"])?NO:YES;
+    
+    NSString *path = url.path;
+    NSCharacterSet *trimmingSet = [NSCharacterSet characterSetWithCharactersInString:@"/"];
+    NSString *selectorName = [path stringByTrimmingCharactersInSet:trimmingSet];
+    
+    if (selectorName.length == 0) {
+        return NO;
+    }
+    
+    NSMutableCharacterSet *safeCharacterSet = [NSMutableCharacterSet alphanumericCharacterSet];
+    [safeCharacterSet addCharactersInString:@"_:"];
+    
+    if ([selectorName rangeOfCharacterFromSet:[safeCharacterSet invertedSet]].location != NSNotFound) {
+        return NO;
+    }
+    
+    NSString *noArgSelectroName = [selectorName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@":"]];
+    
+    if ([selectorName hasPrefix:@":"]||[noArgSelectroName rangeOfString:@":"].location != NSNotFound) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma AWAPPAnnouncement
