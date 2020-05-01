@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
+		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
+		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
+		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
+		6003F59E195388D20070C39A /* AWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AWAppDelegate.m */; };
+		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7F439A2674B7673F02BADD01 /* Pods_AWMaster_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DE385FB5FF9EA3C8DB0461 /* Pods_AWMaster_Tests.framework */; };
+		8492E4F842ACFFA61DEDC723 /* Pods_AWMaster_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D2B17EA7696B9A5A4DA3 /* Pods_AWMaster_Example.framework */; };
+		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		DB06C5E624544C0200063F19 /* MyMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06C5E524544C0200063F19 /* MyMaster.m */; };
+		DB2EC74D245BB76300E6C82D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2EC748245BB76300E6C82D /* InfoPlist.strings */; };
+		DB2EC74E245BB76300E6C82D /* Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2EC74A245BB76300E6C82D /* Tests-Info.plist */; };
+		DB2EC754245BB7CE00E6C82D /* MockForAWMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */; };
+		DB2EC755245BB7CE00E6C82D /* AWMasterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */; };
+		DB937B2A245928B400568910 /* MySlave_A.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B29245928B400568910 /* MySlave_A.m */; };
+		DB937B2D2459443700568910 /* MoudleA.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937B2C2459443700568910 /* MoudleA.xcassets */; };
+		DB937B3824597D7D00568910 /* MySlave_B.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B3724597D7D00568910 /* MySlave_B.m */; };
+		DB937B3D24597DA700568910 /* MySlave_C.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B3C24597DA700568910 /* MySlave_C.m */; };
+		DB937B422459B31300568910 /* AWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B412459B31300568910 /* AWTableViewController.m */; };
+		DB937B472459BEC200568910 /* MoudleBShowImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B452459BEC200568910 /* MoudleBShowImageVC.m */; };
+		DB937B482459BEC200568910 /* MoudleBShowImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB937B462459BEC200568910 /* MoudleBShowImageVC.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB2EC71A245BB26300E6C82D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = AWMaster_Example;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01D527EEAD1A2BA65BE92A62 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0CA0A4BA8C277CF52E11E04E /* Pods-AWMaster_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster_Tests.release.xcconfig"; path = "Target Support Files/Pods-AWMaster_Tests/Pods-AWMaster_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1A00BB738F7EC3AA4A778150 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		23DE385FB5FF9EA3C8DB0461 /* Pods_AWMaster_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AWMaster_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C35BBB1A88B7F795CD2450 /* Pods-AWMaster_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster_Example.release.xcconfig"; path = "Target Support Files/Pods-AWMaster_Example/Pods-AWMaster_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5583606C9B58A296047CFB82 /* Pods-WithoutDemoFile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithoutDemoFile.debug.xcconfig"; path = "Target Support Files/Pods-WithoutDemoFile/Pods-WithoutDemoFile.debug.xcconfig"; sourceTree = "<group>"; };
+		6003F58A195388D20070C39A /* AWMaster_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AWMaster_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6003F595195388D20070C39A /* AWMaster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AWMaster-Info.plist"; sourceTree = "<group>"; };
+		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* AWMaster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AWMaster-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* AWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWAppDelegate.h; sourceTree = "<group>"; };
+		6003F59D195388D20070C39A /* AWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWAppDelegate.m; sourceTree = "<group>"; };
+		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6714146DAB182C9F5CCBC340 /* Pods-AWMaster_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AWMaster_Tests/Pods-AWMaster_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71E133836D26723E0394CB6F /* Pods-WithoutDemoFile_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithoutDemoFile_Tests.release.xcconfig"; path = "Target Support Files/Pods-WithoutDemoFile_Tests/Pods-WithoutDemoFile_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		74E8D2B17EA7696B9A5A4DA3 /* Pods_AWMaster_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AWMaster_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		807CCE0CE6EF471247E17E1F /* Pods-AWMaster_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster_Example.debug.xcconfig"; path = "Target Support Files/Pods-AWMaster_Example/Pods-AWMaster_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A8263150BAEDA2EB5EB9DED /* Pods-WithoutDemoFile_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithoutDemoFile_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WithoutDemoFile_Tests/Pods-WithoutDemoFile_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A70BE44CF77A74623EE87144 /* Pods-AWMaster-AWMaster_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster-AWMaster_Example.debug.xcconfig"; path = "Target Support Files/Pods-AWMaster-AWMaster_Example/Pods-AWMaster-AWMaster_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		AAB92B85B636F067A47E21E5 /* Pods-AWMaster-AWMaster_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AWMaster-AWMaster_Example.release.xcconfig"; path = "Target Support Files/Pods-AWMaster-AWMaster_Example/Pods-AWMaster-AWMaster_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DB06C5E424544C0200063F19 /* MyMaster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMaster.h; sourceTree = "<group>"; };
+		DB06C5E524544C0200063F19 /* MyMaster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMaster.m; sourceTree = "<group>"; };
+		DB2EC715245BB26300E6C82D /* AWMaster_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AWMaster_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2EC749245BB76300E6C82D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB2EC74A245BB76300E6C82D /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		DB2EC74C245BB76300E6C82D /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockForAWMaster.m; sourceTree = "<group>"; };
+		DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWMasterSpec.m; sourceTree = "<group>"; };
+		DB2EC753245BB7CE00E6C82D /* MockForAWMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockForAWMaster.h; sourceTree = "<group>"; };
+		DB937B28245928B400568910 /* MySlave_A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySlave_A.h; sourceTree = "<group>"; };
+		DB937B29245928B400568910 /* MySlave_A.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySlave_A.m; sourceTree = "<group>"; };
+		DB937B2B2459292E00568910 /* MoudleAProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleAProtocol.h; sourceTree = "<group>"; };
+		DB937B2C2459443700568910 /* MoudleA.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MoudleA.xcassets; sourceTree = "<group>"; };
+		DB937B3624597D7D00568910 /* MySlave_B.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySlave_B.h; sourceTree = "<group>"; };
+		DB937B3724597D7D00568910 /* MySlave_B.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySlave_B.m; sourceTree = "<group>"; };
+		DB937B3B24597DA700568910 /* MySlave_C.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySlave_C.h; sourceTree = "<group>"; };
+		DB937B3C24597DA700568910 /* MySlave_C.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySlave_C.m; sourceTree = "<group>"; };
+		DB937B3E24597DE000568910 /* MoudleBProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleBProtocol.h; sourceTree = "<group>"; };
+		DB937B402459B31300568910 /* AWTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWTableViewController.h; sourceTree = "<group>"; };
+		DB937B412459B31300568910 /* AWTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWTableViewController.m; sourceTree = "<group>"; };
+		DB937B432459B63D00568910 /* MyAnnouncement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAnnouncement.h; sourceTree = "<group>"; };
+		DB937B442459BEC200568910 /* MoudleBShowImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleBShowImageVC.h; sourceTree = "<group>"; };
+		DB937B452459BEC200568910 /* MoudleBShowImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoudleBShowImageVC.m; sourceTree = "<group>"; };
+		DB937B462459BEC200568910 /* MoudleBShowImageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoudleBShowImageVC.xib; sourceTree = "<group>"; };
+		E65A2BF0E7CAE0482064D704 /* AWMaster.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AWMaster.podspec; path = ../AWMaster.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EF5795AB1B6AAE90FF30BC6A /* Pods-WithoutDemoFile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WithoutDemoFile.release.xcconfig"; path = "Target Support Files/Pods-WithoutDemoFile/Pods-WithoutDemoFile.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6003F587195388D20070C39A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
+				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				8492E4F842ACFFA61DEDC723 /* Pods_AWMaster_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2EC712245BB26300E6C82D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F439A2674B7673F02BADD01 /* Pods_AWMaster_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6003F581195388D10070C39A = {
+			isa = PBXGroup;
+			children = (
+				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
+				6003F593195388D20070C39A /* Example for AWMaster */,
+				DB2EC747245BB76300E6C82D /* Tests */,
+				6003F58C195388D20070C39A /* Frameworks */,
+				6003F58B195388D20070C39A /* Products */,
+				9784083515072A74E26E486C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		6003F58B195388D20070C39A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6003F58A195388D20070C39A /* AWMaster_Demo.app */,
+				DB2EC715245BB26300E6C82D /* AWMaster_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6003F58C195388D20070C39A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6003F58D195388D20070C39A /* Foundation.framework */,
+				6003F58F195388D20070C39A /* CoreGraphics.framework */,
+				6003F591195388D20070C39A /* UIKit.framework */,
+				6003F5AF195388D20070C39A /* XCTest.framework */,
+				74E8D2B17EA7696B9A5A4DA3 /* Pods_AWMaster_Example.framework */,
+				23DE385FB5FF9EA3C8DB0461 /* Pods_AWMaster_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6003F593195388D20070C39A /* Example for AWMaster */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B332459794E00568910 /* MasterMoudle(所有的服务调用都通过Master发起) */,
+				DB937B322459792700568910 /* MoudleA(组件A提供了图片的获取服务) */,
+				DB937B3524597A9D00568910 /* MoudleB(组件B提供图片和字符串的展示服务,组件B不接收Demo公告) */,
+				DB937B3924597D8500568910 /* MoudleC(组件C没有提供服务,只是注册为Demo公告的接受者) */,
+				6003F59C195388D20070C39A /* AWAppDelegate.h */,
+				6003F59D195388D20070C39A /* AWAppDelegate.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				DB937B402459B31300568910 /* AWTableViewController.h */,
+				DB937B412459B31300568910 /* AWTableViewController.m */,
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				6003F594195388D20070C39A /* Supporting Files */,
+			);
+			name = "Example for AWMaster";
+			path = AWMaster;
+			sourceTree = "<group>";
+		};
+		6003F594195388D20070C39A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6003F595195388D20070C39A /* AWMaster-Info.plist */,
+				6003F596195388D20070C39A /* InfoPlist.strings */,
+				6003F599195388D20070C39A /* main.m */,
+				6003F59B195388D20070C39A /* AWMaster-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				E65A2BF0E7CAE0482064D704 /* AWMaster.podspec */,
+				1A00BB738F7EC3AA4A778150 /* README.md */,
+				01D527EEAD1A2BA65BE92A62 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		9784083515072A74E26E486C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				807CCE0CE6EF471247E17E1F /* Pods-AWMaster_Example.debug.xcconfig */,
+				44C35BBB1A88B7F795CD2450 /* Pods-AWMaster_Example.release.xcconfig */,
+				6714146DAB182C9F5CCBC340 /* Pods-AWMaster_Tests.debug.xcconfig */,
+				0CA0A4BA8C277CF52E11E04E /* Pods-AWMaster_Tests.release.xcconfig */,
+				5583606C9B58A296047CFB82 /* Pods-WithoutDemoFile.debug.xcconfig */,
+				EF5795AB1B6AAE90FF30BC6A /* Pods-WithoutDemoFile.release.xcconfig */,
+				9A8263150BAEDA2EB5EB9DED /* Pods-WithoutDemoFile_Tests.debug.xcconfig */,
+				71E133836D26723E0394CB6F /* Pods-WithoutDemoFile_Tests.release.xcconfig */,
+				A70BE44CF77A74623EE87144 /* Pods-AWMaster-AWMaster_Example.debug.xcconfig */,
+				AAB92B85B636F067A47E21E5 /* Pods-AWMaster-AWMaster_Example.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB2EC747245BB76300E6C82D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DB2EC750245BB7CE00E6C82D /* Mock */,
+				DB2EC748245BB76300E6C82D /* InfoPlist.strings */,
+				DB2EC74A245BB76300E6C82D /* Tests-Info.plist */,
+				DB2EC74C245BB76300E6C82D /* Tests-Prefix.pch */,
+			);
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		DB2EC750245BB7CE00E6C82D /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */,
+				DB2EC753245BB7CE00E6C82D /* MockForAWMaster.h */,
+				DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		DB937B322459792700568910 /* MoudleA(组件A提供了图片的获取服务) */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B2C2459443700568910 /* MoudleA.xcassets */,
+				DB937B28245928B400568910 /* MySlave_A.h */,
+				DB937B29245928B400568910 /* MySlave_A.m */,
+			);
+			path = "MoudleA(组件A提供了图片的获取服务)";
+			sourceTree = "<group>";
+		};
+		DB937B332459794E00568910 /* MasterMoudle(所有的服务调用都通过Master发起) */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B342459799300568910 /* Protocols */,
+				DB06C5E424544C0200063F19 /* MyMaster.h */,
+				DB06C5E524544C0200063F19 /* MyMaster.m */,
+			);
+			path = "MasterMoudle(所有的服务调用都通过Master发起)";
+			sourceTree = "<group>";
+		};
+		DB937B342459799300568910 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B2B2459292E00568910 /* MoudleAProtocol.h */,
+				DB937B3E24597DE000568910 /* MoudleBProtocol.h */,
+				DB937B432459B63D00568910 /* MyAnnouncement.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DB937B3524597A9D00568910 /* MoudleB(组件B提供图片和字符串的展示服务,组件B不接收Demo公告) */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B3624597D7D00568910 /* MySlave_B.h */,
+				DB937B3724597D7D00568910 /* MySlave_B.m */,
+				DB937B442459BEC200568910 /* MoudleBShowImageVC.h */,
+				DB937B452459BEC200568910 /* MoudleBShowImageVC.m */,
+				DB937B462459BEC200568910 /* MoudleBShowImageVC.xib */,
+			);
+			path = "MoudleB(组件B提供图片和字符串的展示服务,组件B不接收Demo公告)";
+			sourceTree = "<group>";
+		};
+		DB937B3924597D8500568910 /* MoudleC(组件C没有提供服务,只是注册为Demo公告的接受者) */ = {
+			isa = PBXGroup;
+			children = (
+				DB937B3B24597DA700568910 /* MySlave_C.h */,
+				DB937B3C24597DA700568910 /* MySlave_C.m */,
+			);
+			path = "MoudleC(组件C没有提供服务,只是注册为Demo公告的接受者)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6003F589195388D20070C39A /* AWMaster_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "AWMaster_Example" */;
+			buildPhases = (
+				984312111E38820066E74A44 /* [CP] Check Pods Manifest.lock */,
+				6003F586195388D20070C39A /* Sources */,
+				6003F587195388D20070C39A /* Frameworks */,
+				6003F588195388D20070C39A /* Resources */,
+				AAFBB714B70B6990DAFB6932 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AWMaster_Example;
+			productName = AWMaster;
+			productReference = 6003F58A195388D20070C39A /* AWMaster_Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB2EC714245BB26300E6C82D /* AWMaster_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB2EC71C245BB26300E6C82D /* Build configuration list for PBXNativeTarget "AWMaster_Tests" */;
+			buildPhases = (
+				A507B49E8F10AC488848E00D /* [CP] Check Pods Manifest.lock */,
+				DB2EC711245BB26300E6C82D /* Sources */,
+				DB2EC712245BB26300E6C82D /* Frameworks */,
+				DB2EC713245BB26300E6C82D /* Resources */,
+				13215F2971D8290207681200 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB2EC71B245BB26300E6C82D /* PBXTargetDependency */,
+			);
+			name = AWMaster_Tests;
+			productName = AWMaster_Tests;
+			productReference = DB2EC715245BB26300E6C82D /* AWMaster_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6003F582195388D10070C39A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AW;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "hellohezhili@gmail.com";
+				TargetAttributes = {
+					DB2EC714245BB26300E6C82D = {
+						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+				};
+			};
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "AWMaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6003F581195388D10070C39A;
+			productRefGroup = 6003F58B195388D20070C39A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6003F589195388D20070C39A /* AWMaster_Example */,
+				DB2EC714245BB26300E6C82D /* AWMaster_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6003F588195388D20070C39A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB937B482459BEC200568910 /* MoudleBShowImageVC.xib in Resources */,
+				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				DB937B2D2459443700568910 /* MoudleA.xcassets in Resources */,
+				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2EC713245BB26300E6C82D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2EC74E245BB76300E6C82D /* Tests-Info.plist in Resources */,
+				DB2EC74D245BB76300E6C82D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13215F2971D8290207681200 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AWMaster_Tests/Pods-AWMaster_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kiwi/Kiwi.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kiwi.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AWMaster_Tests/Pods-AWMaster_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		984312111E38820066E74A44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AWMaster_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A507B49E8F10AC488848E00D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AWMaster_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAFBB714B70B6990DAFB6932 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AWMaster_Example/Pods-AWMaster_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWMaster/AWMaster.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWMaster.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AWMaster_Example/Pods-AWMaster_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6003F586195388D20070C39A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB937B3824597D7D00568910 /* MySlave_B.m in Sources */,
+				DB937B422459B31300568910 /* AWTableViewController.m in Sources */,
+				6003F59E195388D20070C39A /* AWAppDelegate.m in Sources */,
+				DB937B3D24597DA700568910 /* MySlave_C.m in Sources */,
+				DB937B472459BEC200568910 /* MoudleBShowImageVC.m in Sources */,
+				DB937B2A245928B400568910 /* MySlave_A.m in Sources */,
+				6003F59A195388D20070C39A /* main.m in Sources */,
+				DB06C5E624544C0200063F19 /* MyMaster.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB2EC711245BB26300E6C82D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB2EC755245BB7CE00E6C82D /* AWMasterSpec.m in Sources */,
+				DB2EC754245BB7CE00E6C82D /* MockForAWMaster.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB2EC71B245BB26300E6C82D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* AWMaster_Example */;
+			targetProxy = DB2EC71A245BB26300E6C82D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6003F596195388D20070C39A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6003F597195388D20070C39A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71719F9E1E33DC2100824A3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DB2EC748245BB76300E6C82D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB2EC749245BB76300E6C82D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6003F5BD195388D20070C39A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6003F5BE195388D20070C39A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6003F5C0195388D20070C39A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 807CCE0CE6EF471247E17E1F /* Pods-AWMaster_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AWMaster/AWMaster-Prefix.pch";
+				INFOPLIST_FILE = "AWMaster/AWMaster-Info.plist";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = AWMaster_Demo;
+				SWIFT_VERSION = 4.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6003F5C1195388D20070C39A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C35BBB1A88B7F795CD2450 /* Pods-AWMaster_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AWMaster/AWMaster-Prefix.pch";
+				INFOPLIST_FILE = "AWMaster/AWMaster-Info.plist";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = AWMaster_Demo;
+				SWIFT_VERSION = 4.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DB2EC71D245BB26300E6C82D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6714146DAB182C9F5CCBC340 /* Pods-AWMaster_Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "hellohezhili.AWMaster-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AWMaster_Demo.app/AWMaster_Demo";
+			};
+			name = Debug;
+		};
+		DB2EC71E245BB26300E6C82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA0A4BA8C277CF52E11E04E /* Pods-AWMaster_Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "hellohezhili.AWMaster-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AWMaster_Demo.app/AWMaster_Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "AWMaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6003F5BD195388D20070C39A /* Debug */,
+				6003F5BE195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "AWMaster_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6003F5C0195388D20070C39A /* Debug */,
+				6003F5C1195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB2EC71C245BB26300E6C82D /* Build configuration list for PBXNativeTarget "AWMaster_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB2EC71D245BB26300E6C82D /* Debug */,
+				DB2EC71E245BB26300E6C82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6003F582195388D10070C39A /* Project object */;
+}
