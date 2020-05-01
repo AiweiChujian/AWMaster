@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "AWMaster_Example.app"
+               BuildableName = "AWMaster_Demo.app"
                BlueprintName = "AWMaster_Example"
                ReferencedContainer = "container:AWMaster.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "AWMaster_Example.app"
+            BuildableName = "AWMaster_Demo.app"
             BlueprintName = "AWMaster_Example"
             ReferencedContainer = "container:AWMaster.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "AWMaster_Example.app"
+            BuildableName = "AWMaster_Demo.app"
             BlueprintName = "AWMaster_Example"
             ReferencedContainer = "container:AWMaster.xcodeproj">
          </BuildableReference>
@@ -81,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "AWMaster_Example.app"
+            BuildableName = "AWMaster_Demo.app"
             BlueprintName = "AWMaster_Example"
             ReferencedContainer = "container:AWMaster.xcodeproj">
          </BuildableReference>
