@@ -41,7 +41,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F5AD195388D20070C39A"
+               BlueprintIdentifier = "DB2EC714245BB26300E6C82D"
                BuildableName = "AWMaster_Tests.xctest"
                BlueprintName = "AWMaster_Tests"
                ReferencedContainer = "container:AWMaster.xcodeproj">
