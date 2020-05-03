@@ -10,7 +10,6 @@
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* AWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* AWAppDelegate.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
@@ -19,9 +18,8 @@
 		8492E4F842ACFFA61DEDC723 /* Pods_AWMaster_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8D2B17EA7696B9A5A4DA3 /* Pods_AWMaster_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		DB06C5E624544C0200063F19 /* MyMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = DB06C5E524544C0200063F19 /* MyMaster.m */; };
-		DB2EC74D245BB76300E6C82D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2EC748245BB76300E6C82D /* InfoPlist.strings */; };
-		DB2EC74E245BB76300E6C82D /* Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2EC74A245BB76300E6C82D /* Tests-Info.plist */; };
-		DB2EC754245BB7CE00E6C82D /* MockForAWMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */; };
+		DB2170C9245C4EE600876B7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
+		DB2170CA245C4EF200876B7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB2EC748245BB76300E6C82D /* InfoPlist.strings */; };
 		DB2EC755245BB7CE00E6C82D /* AWMasterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */; };
 		DB937B2A245928B400568910 /* MySlave_A.m in Sources */ = {isa = PBXBuildFile; fileRef = DB937B29245928B400568910 /* MySlave_A.m */; };
 		DB937B2D2459443700568910 /* MoudleA.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937B2C2459443700568910 /* MoudleA.xcassets */; };
@@ -76,9 +74,8 @@
 		DB2EC749245BB76300E6C82D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB2EC74A245BB76300E6C82D /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		DB2EC74C245BB76300E6C82D /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockForAWMaster.m; sourceTree = "<group>"; };
 		DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWMasterSpec.m; sourceTree = "<group>"; };
-		DB2EC753245BB7CE00E6C82D /* MockForAWMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockForAWMaster.h; sourceTree = "<group>"; };
+		DB9078A2245DE46E003C8F44 /* MoudleDProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleDProtocol.h; sourceTree = "<group>"; };
 		DB937B28245928B400568910 /* MySlave_A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySlave_A.h; sourceTree = "<group>"; };
 		DB937B29245928B400568910 /* MySlave_A.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySlave_A.m; sourceTree = "<group>"; };
 		DB937B2B2459292E00568910 /* MoudleAProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoudleAProtocol.h; sourceTree = "<group>"; };
@@ -216,23 +213,13 @@
 		DB2EC747245BB76300E6C82D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DB2EC750245BB7CE00E6C82D /* Mock */,
+				DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */,
 				DB2EC748245BB76300E6C82D /* InfoPlist.strings */,
 				DB2EC74A245BB76300E6C82D /* Tests-Info.plist */,
 				DB2EC74C245BB76300E6C82D /* Tests-Prefix.pch */,
 			);
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
-		};
-		DB2EC750245BB7CE00E6C82D /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				DB2EC751245BB7CE00E6C82D /* MockForAWMaster.m */,
-				DB2EC753245BB7CE00E6C82D /* MockForAWMaster.h */,
-				DB2EC752245BB7CE00E6C82D /* AWMasterSpec.m */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
 		};
 		DB937B322459792700568910 /* MoudleA(组件A提供了图片的获取服务) */ = {
 			isa = PBXGroup;
@@ -260,6 +247,7 @@
 				DB937B2B2459292E00568910 /* MoudleAProtocol.h */,
 				DB937B3E24597DE000568910 /* MoudleBProtocol.h */,
 				DB937B432459B63D00568910 /* MyAnnouncement.h */,
+				DB9078A2245DE46E003C8F44 /* MoudleDProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -368,12 +356,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2170CA245C4EF200876B7D /* InfoPlist.strings in Resources */,
 				DB937B482459BEC200568910 /* MoudleBShowImageVC.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				DB937B2D2459443700568910 /* MoudleA.xcassets in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,8 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2EC74E245BB76300E6C82D /* Tests-Info.plist in Resources */,
-				DB2EC74D245BB76300E6C82D /* InfoPlist.strings in Resources */,
+				DB2170C9245C4EE600876B7D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2EC755245BB7CE00E6C82D /* AWMasterSpec.m in Sources */,
-				DB2EC754245BB7CE00E6C82D /* MockForAWMaster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

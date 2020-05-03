@@ -27,4 +27,8 @@ AWCompleteSingleton(slave)
 {
     return [NSString stringWithFormat:@"MoudleC收到Master公告(%@)",askString];
 }
++ (CGAffineTransform)classAnnouncementReplyTransform;
+{
+    return CGAffineTransformMake(1, 1, 0, 0, 0xccc, 0xccc);
+}
 @end

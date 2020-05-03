@@ -12,8 +12,11 @@
 
 @protocol MoudleAProtocol <NSObject>
 
+@required
 + (UIImage *)moudleA_imageWithImageName:(NSString *)imageName;
+@property (nonatomic, copy)NSString *moudleA_slaveName;
 
+@optional
 - (UIImage *)moudleA_imageWithDomain:(NSString *)domain andSerial:(NSInteger)serial;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2020 hellohezhili@gmail.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "MyMaster.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

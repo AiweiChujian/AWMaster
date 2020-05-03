@@ -90,7 +90,7 @@ UIImage *image = [MyMaster openServiceWithUrlPath:@"image://class/moudleA_imageW
 ```objc
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 ```
 

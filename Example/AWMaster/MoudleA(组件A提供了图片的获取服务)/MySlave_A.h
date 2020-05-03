@@ -6,12 +6,13 @@
 //  Copyright © 2020 hellohezhili@gmail.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MyMaster.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MySlave_A : NSObject<MoudleAProtocol,AWAPPAnnouncement,MyAnnouncement>
+
+@property (nonatomic, copy)NSString *moudleA_slaveName;
 
 @end
 

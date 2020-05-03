@@ -7,6 +7,7 @@
 //
 
 #import "AWAppDelegate.h"
+#import "MyMaster.h"
 
 @implementation AWAppDelegate
 

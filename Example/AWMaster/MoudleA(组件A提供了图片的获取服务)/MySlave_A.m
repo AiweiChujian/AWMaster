@@ -28,7 +28,7 @@ AWCompleteSingleton(slave)
 
 - (UIImage *)moudleA_imageWithDomain:(NSString *)domain andSerial:(NSInteger)serial
 {
-    NSString *imageName = [NSString stringWithFormat:@"%@_%ld",domain,serial];
+    NSString *imageName = [NSString stringWithFormat:@"%@_%ld",domain,(long)serial];
     return [self.class moudleA_imageWithImageName:imageName];
 }
 
@@ -41,5 +41,14 @@ AWCompleteSingleton(slave)
 {
     return [NSString stringWithFormat:@"MoudleA收到Master公告(%@)",askString];
 }
++ (CGAffineTransform)classAnnouncementReplyTransform;
+{
+    return CGAffineTransformMake(0, 0, 1, 1, 0xaaa, 0xaaa);
+}
+- (void)instanceAnnouncementWithMultiArg:(NSInteger)integer doublePointer:(double *)pointer CGRect:(CGRect)rect object:(NSArray *)array
+{
+    
+}
+
 @end
 

@@ -12,7 +12,12 @@
 
 @protocol  MyAnnouncement<NSObject>
 
+@required
++ (CGAffineTransform)classAnnouncementReplyTransform;
 + (id)replyForAsk:(NSString *)askString;
+
+@optional
+- (void)instanceAnnouncementWithMultiArg:(NSInteger )integer doublePointer:(double *)pointer CGRect:(CGRect)rect object:(NSArray *)array;
 
 @end
 

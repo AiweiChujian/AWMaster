@@ -49,24 +49,24 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
     
     // (to do: 将以下调用异步派发给一个串行队列, ps:如果这样做,记得消息转发取值时也需要在同一个队列)
     // 注册实例方法
-    [self p_registerProtocol:protocol requiredMethod:YES instanceMethod:YES withClass:slave];
-    [self p_registerProtocol:protocol requiredMethod:NO instanceMethod:YES withClass:slave];
+    [self awm_registerProtocol:protocol requiredMethod:YES instanceMethod:YES withClass:slave];
+    [self awm_registerProtocol:protocol requiredMethod:NO instanceMethod:YES withClass:slave];
     
     // 注册类方法
-    [self p_registerProtocol:protocol requiredMethod:YES instanceMethod:NO withClass:slave];
-    [self p_registerProtocol:protocol requiredMethod:NO instanceMethod:NO withClass:slave];
+    [self awm_registerProtocol:protocol requiredMethod:YES instanceMethod:NO withClass:slave];
+    [self awm_registerProtocol:protocol requiredMethod:NO instanceMethod:NO withClass:slave];
     
 }
 
 + (void)deregisterProtocol:(Protocol *)protocol
 {
     // 注销实例方法
-    [self p_registerProtocol:protocol requiredMethod:YES instanceMethod:YES withClass:nil];
-    [self p_registerProtocol:protocol requiredMethod:NO instanceMethod:YES withClass:nil];
+    [self awm_registerProtocol:protocol requiredMethod:YES instanceMethod:YES withClass:nil];
+    [self awm_registerProtocol:protocol requiredMethod:NO instanceMethod:YES withClass:nil];
     
     // 注销类方法
-    [self p_registerProtocol:protocol requiredMethod:YES instanceMethod:NO withClass:nil];
-    [self p_registerProtocol:protocol requiredMethod:NO instanceMethod:NO withClass:nil];
+    [self awm_registerProtocol:protocol requiredMethod:YES instanceMethod:NO withClass:nil];
+    [self awm_registerProtocol:protocol requiredMethod:NO instanceMethod:NO withClass:nil];
 }
 
 + (void)addAnnouncementReceiver:(Class)receiver
@@ -121,15 +121,8 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
 }
 #pragma mark 私有方法
 
-+ (void)p_registerProtocol:(Protocol *)protocol requiredMethod:(BOOL)isRequiredMethod instanceMethod:(BOOL)isInstanceMethod withClass:(Class)cls
++ (void)awm_registerProtocol:(Protocol *)protocol requiredMethod:(BOOL)isRequiredMethod instanceMethod:(BOOL)isInstanceMethod withClass:(Class)cls
 {
-    if (_selfClassSelectorList == nil) {
-        _selfClassSelectorList = [self p_getSelectorListForClass:object_getClass(self)];
-    }
-    
-    if (_selfInstanceSelectorList == nil) {
-        _selfInstanceSelectorList = [self p_getSelectorListForClass:self];
-    }
     
     NSMutableDictionary *targetDictionary = isInstanceMethod?_instanceMethodDictonary:_classMethodDictonary;
     unsigned int methodCount = 0;
@@ -139,11 +132,11 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
         for (int i = 0; i<methodCount; i++) {
             struct objc_method_description methodDes = methodList[i];
             NSString *key = NSStringFromSelector(methodDes.name);
-            if (cls) { // cls为nil时即注销服务协议
-                if ((isInstanceMethod && [_selfInstanceSelectorList containsObject:key])||(!isInstanceMethod && [_selfClassSelectorList containsObject:key])) {
-                    
+            // cls为nil时即注销服务协议
+            if (cls) {
+                if ([self awm_masterRespondsSelector:methodDes.name instanceMethod:isInstanceMethod]) {
                     // slave中注册的方法,master中已实现
-                    [self masterImplementedSelecotr:methodDes.name fromSlave:cls isInstanceMethod:isInstanceMethod];
+                    [self masterRespondsSelecotr:methodDes.name fromSlave:cls isInstanceMethod:isInstanceMethod];
                     continue;
                 }
                 
@@ -157,20 +150,34 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
         free(methodList);
     }
 }
-
-+ (NSMutableArray *)p_getSelectorListForClass:(Class)cls
++ (BOOL)awm_masterRespondsSelector:(SEL)selector instanceMethod:(BOOL)isInstanceMethod
 {
-    NSMutableArray *selectorList = [[NSMutableArray alloc]init];
-    unsigned int methodCount = 0;
-    Method *methodList = class_copyMethodList(cls, &methodCount);
-    if (methodList) {
-        for (unsigned int i = 0; i < methodCount; i++) {
-            Method method = methodList[i];
-            [selectorList addObject:NSStringFromSelector(method_getName(method))];
+    if (isInstanceMethod) {
+        if (!_selfInstanceSelectorList) {
+            _selfInstanceSelectorList = [[NSMutableArray alloc]init];
         }
-        free(methodList);
+        if ([_selfInstanceSelectorList containsObject:NSStringFromSelector(selector)]) {
+            return YES;
+        }
+        if ([self instancesRespondToSelector:selector]) {
+            [_selfInstanceSelectorList addObject:NSStringFromSelector(selector)];
+            return YES;
+      }
     }
-    return selectorList;
+    else
+    {
+        if (!_selfClassSelectorList) {
+              _selfClassSelectorList = [[NSMutableArray alloc]init];
+          }
+          if ([_selfClassSelectorList containsObject:NSStringFromSelector(selector)]) {
+              return YES;
+          }
+          if ([self respondsToSelector:selector]) {
+              [_selfClassSelectorList addObject:NSStringFromSelector(selector)];
+              return YES;
+        }
+    }
+    return NO;
 }
 
 #pragma mark forward selector
@@ -179,7 +186,13 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
 {
     Class slave = _classMethodDictonary[NSStringFromSelector(aSelector)];
     if (slave) {
-        return slave;
+        if ([self willForwardSelector:aSelector toSlave:slave isInstanceMethod:NO]) {
+            return slave;
+        }
+        else
+        {
+            return [super forwardingTargetForSelector:aSelector];
+        }
     }
     else
     {
@@ -192,7 +205,13 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
 {
     Class slave = _instanceMethodDictonary[NSStringFromSelector(aSelector)];
     if (slave) {
-        return [slave new];
+        if ([self.class willForwardSelector:aSelector toSlave:slave isInstanceMethod:YES]) {
+            return [slave new];
+        }
+        else
+        {
+            return [super forwardingTargetForSelector:aSelector];
+        }
     }
     else
     {
@@ -231,9 +250,15 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
     return YES;
 }
 
-+ (void)masterImplementedSelecotr:(SEL)selector fromSlave:(Class)slave isInstanceMethod:(BOOL)isInstanceMethod
++ (void)masterRespondsSelecotr:(SEL)selector fromSlave:(Class)slave isInstanceMethod:(BOOL)isInstanceMethod
 {
-    NSLog(@"⚠️ master implemented selecotr (%@), from salve (%@)",NSStringFromSelector(selector),NSStringFromClass(slave));
+    NSLog(@"⛔️ master implemented selecotr (%@), from salve (%@)",NSStringFromSelector(selector),NSStringFromClass(slave));
+}
+
++ (BOOL)willForwardSelector:(SEL)selector toSlave:(Class)slave isInstanceMethod:(BOOL)isInstanceMethod
+{
+    NSLog(@"✅ will forward selecotr (%@%@) to salve (%@)",isInstanceMethod?@"-":@"+",NSStringFromSelector(selector),NSStringFromClass(slave));
+    return YES;
 }
 
 + (void)unregisteredSelector:(SEL)selector isInstanceMethod:(BOOL)isInstanceMethod
@@ -286,25 +311,25 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    AW_AnnounceCurrentMethod(application)
+    AW_AnnounceCurrentMethod(application);
 }
 
 @end

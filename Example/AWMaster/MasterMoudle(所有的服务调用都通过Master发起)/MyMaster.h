@@ -10,6 +10,7 @@
 #import "AWMaster+Tools.h"
 #import "MoudleAProtocol.h"
 #import "MoudleBProtocol.h"
+#import "MoudleDProtocol.h"
 #import "MyAnnouncement.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,7 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 <
     MyAnnouncement,
     MoudleAProtocol,
-    MoudleBProtocol
+    MoudleBProtocol,
+    MoudleDProtocol
 >
 @end
 

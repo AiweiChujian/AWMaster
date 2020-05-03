@@ -52,4 +52,9 @@ AWCompleteSingleton(slave)
 {
     [self moudleB_showAlertWithTitle:@"Class Method" message:message confirmAction:nil];
 }
+
++ (NSString *)moudleB_moudleName
+{
+    return @"moudleB";
+}
 @end

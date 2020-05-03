@@ -7,6 +7,9 @@
 //
 
 #import "AWTableViewController.h"
+/// 调用服务时, 引入Master即可
+#import "MyMaster.h"
+
 
 @interface AWTableViewController ()
 

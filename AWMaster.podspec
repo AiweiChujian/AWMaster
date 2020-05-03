@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AWMaster'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = '组件化架构中间件，基于消息转发的组件间通信方案'
                        
   s.homepage         = 'https://github.com/AiweiChujian/AWMaster'

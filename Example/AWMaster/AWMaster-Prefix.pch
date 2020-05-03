@@ -14,5 +14,4 @@
     @import UIKit;
     @import Foundation;
 
-#import "MyMaster.h"
 #endif
