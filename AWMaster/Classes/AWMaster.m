@@ -15,8 +15,6 @@ static NSMutableArray <Class> *_receiverArray;
 static NSMutableArray <NSString *> *_selfInstanceSelectorList;
 static NSMutableArray <NSString *> *_selfClassSelectorList;
 
-#define AW_GENERAL_TYPES "v@:@"
-
 @implementation AWMaster
 
 +(NSDictionary<NSString *,Class> *)instanceMethodDictionary
@@ -111,10 +109,23 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
                 }
             }
         }
+        SEL selector = NSSelectorFromString(selectorName);
+        id target = isInstanceMethod?[self new]:self;
+        NSMethodSignature *signature = [target methodSignatureForSelector:selector];
+        if (signature == nil) {
+            return nil;
+        }
+        const char *returnType = [signature methodReturnType];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        id target = isInstanceMethod?[self new]:self;
-        return [target performSelector:NSSelectorFromString(selectorName) withObject:object];
+        if (strcmp(returnType, @encode(void)) == 0) {
+            [target performSelector:selector withObject:object];
+            return nil;
+        }
+        else
+        {
+            return [target performSelector:selector withObject:object];
+        }
 #pragma clang diagnostic pop
     }
     return nil;
@@ -196,7 +207,6 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
     }
     else
     {
-        [self unregisteredSelector:aSelector isInstanceMethod:NO];
         return [super forwardingTargetForSelector:aSelector];
     }
 }
@@ -215,32 +225,18 @@ static NSMutableArray <NSString *> *_selfClassSelectorList;
     }
     else
     {
-        [self.class unregisteredSelector:aSelector isInstanceMethod:YES];
         return [super forwardingTargetForSelector:aSelector];
     }
 }
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
-{
-    if ([self respondsToSelector:aSelector]) {
-        return [super methodSignatureForSelector:aSelector];
-    }
-    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_TYPES];
-}
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    NSLog(@"unrecognized selector (-%@) sent to Master ",NSStringFromSelector(anInvocation.selector));
+    [self.class unregisteredSelector:anInvocation.selector isInstanceMethod:YES];
 }
-+ (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
-{
-    if ([self respondsToSelector:aSelector]) {
-        return [super methodSignatureForSelector:aSelector];
-    }
-    return [NSMethodSignature signatureWithObjCTypes:AW_GENERAL_TYPES];
-}
+
 + (void)forwardInvocation:(NSInvocation *)anInvocation
 {
-    NSLog(@"unrecognized selector (+%@) sent to Master ",NSStringFromSelector(anInvocation.selector));
+    [self unregisteredSelector:anInvocation.selector isInstanceMethod:NO];
 }
 #pragma mark protocol AWMaster
 
