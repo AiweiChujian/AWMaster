@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define AWCompleteSingleton(_methodName) \
 + (instancetype) _methodName\
