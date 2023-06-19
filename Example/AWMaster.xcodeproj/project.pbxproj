@@ -325,6 +325,9 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "hellohezhili@gmail.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = ZDY99KXKVP;
+					};
 					DB2EC714245BB26300E6C82D = {
 						CreatedOnToolsVersion = 11.4;
 						ProvisioningStyle = Automatic;
@@ -626,6 +629,7 @@
 			baseConfigurationReference = 807CCE0CE6EF471247E17E1F /* Pods-AWMaster_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZDY99KXKVP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWMaster/AWMaster-Prefix.pch";
 				INFOPLIST_FILE = "AWMaster/AWMaster-Info.plist";
@@ -642,6 +646,7 @@
 			baseConfigurationReference = 44C35BBB1A88B7F795CD2450 /* Pods-AWMaster_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7ULSH3A3NH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AWMaster/AWMaster-Prefix.pch";
 				INFOPLIST_FILE = "AWMaster/AWMaster-Info.plist";
